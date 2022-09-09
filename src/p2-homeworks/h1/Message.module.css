@@ -1,4 +1,6 @@
-
+.title {
+    color: lightgreen;
+}
 .message {
     display: flex;
     align-items: flex-end;
@@ -49,7 +51,7 @@
     transform: rotate(-20deg);
 }
 
-.title {
+.name {
     color: violet;
     font-weight: bold;
 }

@@ -13,7 +13,7 @@ function AlternativeMessage(props: AlternativeMessageType) {
         <div className={s.message}>
             <img src={props.avatar}></img>
             <div className={s.message__block}>
-                <div className={s.title}>{props.name}</div>
+                <div className={s.name}>{props.name}</div>
                 <div className={s.text}>{props.message}</div>
                 <span className={s.time}>{props.time}</span>
             </div>

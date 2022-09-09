@@ -1,6 +1,7 @@
 import React from 'react'
 import Message from "./Message";
 import AlternativeMessage from "./AlternativeMessage";
+import s from './Message.module.css'
 
 const messageData = [
     {
@@ -23,10 +24,7 @@ function HW1() {
     return (
         <div>
             <hr/>
-            homeworks 1
-
-            should work (должно работать)
-
+            <p className={s.title}>homeworks 1</p>
             <Message avatar={messageData[0].avatar}
                      name={messageData[0].name}
                      message={messageData[0].message}
