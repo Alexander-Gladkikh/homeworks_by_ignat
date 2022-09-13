@@ -1,0 +1,69 @@
+.title {
+    color: lightgreen;
+}
+
+.wrapperSelect {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapperRadio {
+    margin-left: 10px;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+}
+
+.select {
+    width: 70px;
+    height: 20px;
+    background-color: darkgreen;
+    color: lightgreen;
+    border-radius: 3px;
+    border: 1px solid lightgreen;
+    transition: all 0.5s;
+    outline: none;
+}
+
+.select:hover {
+    outline: none;
+    border: 2px solid lightgreen;
+}
+
+.option {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+.option:checked {
+    color: red;
+}
+
+.radioLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+.radio {
+    appearance: none;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    outline: none;
+
+    background: lightgreen;
+}
+
+.radio:hover {
+    border: 2px solid #edff07;
+}
+
+.radio:focus {
+    border: 2px solid lightgreen;
+    background: #ff7654;
+}
