@@ -1,6 +1,6 @@
 .App {
     --header_height: 60px;
-    padding: 107px 70px 0 70px;
+    padding: 77px 70px 0 70px;
 }
 
 .hw {
@@ -14,6 +14,7 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
+    margin-top: 40px;
 }
 
 .hwTitle::before {
