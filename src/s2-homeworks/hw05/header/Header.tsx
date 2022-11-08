@@ -15,11 +15,11 @@ export const Header: FC<PropsType> = ({handleOpen}) => {
 
     const pageName =
         currentPath === PATH.PRE_JUNIOR
-            ? ''
+            ? 'PRE_JUNIOR'
             : currentPath === PATH.JUNIOR
-                ? ''
+                ? 'JUNIOR'
                 : currentPath === PATH.JUNIOR_PLUS
-                    ? ''
+                    ? 'JUNIOR_PLUS'
                     : 'Error'
     return (
         <>
