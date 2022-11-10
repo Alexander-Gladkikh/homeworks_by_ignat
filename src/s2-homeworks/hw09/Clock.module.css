@@ -1,5 +1,8 @@
 .buttonsContainer {
 }
+.buttonsContainer button:disabled{
+    background-color: red;
+}
 
 .clock {
 }
