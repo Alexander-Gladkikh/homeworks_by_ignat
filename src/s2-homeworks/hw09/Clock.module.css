@@ -1,7 +1,14 @@
 .buttonsContainer {
+    margin-top: 10px;
+    display: flex;
 }
-.buttonsContainer button:disabled{
-    background-color: red;
+
+.buttonsContainer button:first-child {
+    margin-right: 20px;
+}
+
+.buttonsContainer button:disabled {
+    opacity: 0.4;
 }
 
 .clock {
