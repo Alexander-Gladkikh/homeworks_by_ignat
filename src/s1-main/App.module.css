@@ -1,3 +1,7 @@
+* {
+    border-spacing: 0;
+}
+
 .App {
     --header_height: 60px;
     padding: 70px 70px 0 70px;

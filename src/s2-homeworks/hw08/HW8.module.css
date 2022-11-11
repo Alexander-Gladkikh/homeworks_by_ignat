@@ -1,9 +1,20 @@
 .item {
+    position: relative;
     height: 36px;
     padding: 10px 17px;
 }
+.item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color:  #E5E5E5;;
+    top:  35px;
+}
 
-.item:last-of-type {
+.item:last-of-type::before {
+    content: '';
+    display: none;
 }
 
 .users {
@@ -35,6 +46,8 @@
 }
 
 .nameCol {
+    display: block;
+    padding: 10px 17px;
 }
 
 .ageCol {
