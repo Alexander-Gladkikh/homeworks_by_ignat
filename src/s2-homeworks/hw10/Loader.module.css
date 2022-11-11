@@ -1,3 +1,48 @@
 .loader {
-    /*свг и/или анимация*/
+
+}
+
+@keyframes ldioBmgr8c4yoni {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.ldioBmgr8c4yoni div {
+    position: absolute;
+    animation: ldioBmgr8c4yoni 0.76s linear infinite;
+    width: 157.32px;
+    height: 157.32px;
+    top: 24.839999999999996px;
+    left: 24.839999999999996px;
+    border-radius: 50%;
+    box-shadow: 0 9.729px 0 0 #e15b64;
+    transform-origin: 78.66px 83.5245px;
+}
+
+.loadingioSpinnerEclipseOtfo73gpen7 {
+    width: 207px;
+    height: 207px;
+    display: inline-block;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ldioBmgr8c4yoni {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+}
+
+.ldioBmgr8c4yoni div {
+    box-sizing: content-box;
 }
