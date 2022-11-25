@@ -26,9 +26,9 @@ const HW13 = () => {
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
                 : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
 
-        setCode('Error!')
+        setCode('')
         setImage('')
-        setText('Network Error AxiosError')
+        setText('')
         setInfo('...loading')
 
         axios
@@ -36,6 +36,8 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText('...всё ок) код 200 - обычно означает что скорее всего всё ок)')
+                setInfo('')
                 // дописать
 
             })
