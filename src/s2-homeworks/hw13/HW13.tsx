@@ -26,9 +26,9 @@ const HW13 = () => {
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
                 : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
 
-        setCode('setCode')
+        setCode('Error!')
         setImage('')
-        setText('')
+        setText('Network Error AxiosError')
         setInfo('...loading')
 
         axios
