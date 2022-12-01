@@ -19,11 +19,14 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [disabledButton, setDisabledButton] = useState(false)
 
     const send = (x?: boolean | null) => () => {
+        setDisabledButton(true)
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
+
                 : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
 
         setCode('')
@@ -34,15 +37,35 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+
                 setCode('Код 200!')
                 setImage(success200)
-                setText('...всё ок) код 200 - обычно означает что скорее всего всё ок)')
-                setInfo('')
+                setText(res.data.errorText)
+                setInfo(res.data.info)
                 // дописать
-
+                setDisabledButton(false)
             })
             .catch((e) => {
-                // дописать
+                console.log(e.message)
+                if (e.response.status === 500) {
+                    setCode('Ошибка 500')
+                    setImage(error500)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                }
+                else if (e.response.status === 400) {
+                    setCode('Ошибка 400')
+                    setImage(error400)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                }
+                else if (e.response.status === 0) {
+                    setCode('Error')
+                    setImage(errorUnknown)
+                    setText(e.message)
+                    setInfo(e.name)
+                }
+                setDisabledButton(false)
 
             })
     }
@@ -57,6 +80,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={disabledButton}
                         // дописать
 
                     >
@@ -66,6 +90,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={disabledButton}
                         // дописать
 
                     >
@@ -75,7 +100,9 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={disabledButton}
                         // дописать
+
 
                     >
                         Send undefined
@@ -84,6 +111,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={disabledButton}
                         // дописать
 
                     >
