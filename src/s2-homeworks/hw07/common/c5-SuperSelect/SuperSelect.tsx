@@ -1,7 +1,7 @@
 import React, {
     SelectHTMLAttributes,
     DetailedHTMLProps,
-    ChangeEvent,
+    ChangeEvent, ReactNode,
 } from 'react'
 import s from './SuperSelect.module.css'
 
@@ -23,7 +23,8 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     onChangeOption,
     ...restProps
 }) => {
-    const mappedOptions: any[] = options
+
+    const mappedOptions: ReactNode[] = options
         ? options.map((o) => (
               <option
                   id={'hw7-option-' + o.id}
@@ -38,8 +39,8 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         // делают студенты
-        //console.log(e.currentTarget.value)
-       onChangeOption?.(parseInt(e.currentTarget.value))
+        onChange && onChange(e)
+        onChangeOption && onChangeOption(+e.currentTarget.value)
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
