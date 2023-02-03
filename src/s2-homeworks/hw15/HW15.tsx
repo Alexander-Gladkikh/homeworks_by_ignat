@@ -55,50 +55,37 @@ const HW15 = () => {
                 if (res) {
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
+                    setLoading(false)
                 }
-                setLoading(false)
-
-                // сохранить пришедшие данные
-
-                //
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
-
+    const onChangePagination = (newPage: number, newCount?: number) => {
         setPage(newPage)
-        setCount(newCount)
+        newCount && setCount(newCount)
 
-        sendQuery({newPage, newCount})
-
-        setSearchParams({
-            ...Object.fromEntries(searchParams),
-            page: newPage.toString(),
-            count: newCount.toString()
-        })
+        sendQuery({page: newPage, count: newCount || count})
+        setSearchParams({page: newPage.toString(), count: newCount?.toString() || count.toString()})
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
         setSort(newSort)
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
-        setSearchParams({
-            ...Object.fromEntries(searchParams),
-            sort: newSort
-        })
+        sendQuery({page: 1, count: count, sort: newSort})
+        setSearchParams({page: '1', count: count.toString(), sort: newSort})
         //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count, sort: params.sort})
+        sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-    }, [searchParams])
+    }, [])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
